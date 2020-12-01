@@ -1,18 +1,12 @@
 public class Heap {
-    public Heap first;
-    private Heap before;
-    private Heap larger;
-    private Heap smaller;
-    private Buch aE;
+    public Knoten first;
 
-    Heap(Buch pBuch){
-        setaE(pBuch);
-    }
+
 
     public boolean insert(Buch pBuch){
-        Heap tmp=first;
+        Knoten tmp=first;
         if(first==null) {
-            first.setaE(pBuch);
+            first=new Knoten(pBuch);
             return true;
         }
         boolean h=true;
@@ -21,16 +15,18 @@ public class Heap {
                 if (tmp.getLarger() != null) {
                     tmp=tmp.getLarger();
                 }else{
-                    tmp.setLarger(new Heap(pBuch));
+                    tmp.setLarger(new Knoten(pBuch));
                     h=false;
+                    break;
                 }
             }
             if (pBuch.getIsbn() < tmp.getaE().getIsbn()) {
                 if (tmp.getSmaller() != null) {
                     tmp=tmp.getSmaller();
                 }else{
-                    tmp.setSmaller(new Heap(pBuch));
+                    tmp.setSmaller(new Knoten(pBuch));
                     h=false;
+                    break;
                 }
             }
         }
@@ -38,43 +34,27 @@ public class Heap {
 
     }
 
-    public Buch getaE() {
-        return aE;
+    public Buch get(int pN){
+        boolean h=true
+        while(h){
+
+        }
+    }
+    public void ausgabe(){
+        first.ausgabe();
     }
 
-    public Heap getBefore() {
-        return before;
-    }
 
-    public Heap getFirst() {
+    public Knoten getFirst() {
         return first;
     }
 
-    public Heap getLarger() {
-        return larger;
-    }
 
-    public Heap getSmaller() {
-        return smaller;
-    }
 
-    public void setSmaller(Heap pSmaller) {
-        smaller = pSmaller;
-    }
 
-    public void setLarger(Heap pLarger) {
-        larger = pLarger;
-    }
-
-    public void setBefore(Heap pBefore) {
-        before = pBefore;
-    }
-
-    public void setFirst(Heap pFirst) {
+    public void setFirst(Knoten pFirst) {
         first = pFirst;
     }
 
-    public void setaE(Buch pAE) {
-        aE = pAE;
-    }
+
 }
