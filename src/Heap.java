@@ -34,12 +34,12 @@ public class Heap {
 
     }
 
-    public Buch get(int pN){
+    /*public Buch get(int pN){
         boolean h=true
         while(h){
 
         }
-    }
+    }*/
     public void ausgabe(){
         first.ausgabe();
     }
