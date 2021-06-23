@@ -1,4 +1,3 @@
-//Bücher in einem Heap nach der isbn Speichern
 public class Heap {
     public Knoten first;
 
